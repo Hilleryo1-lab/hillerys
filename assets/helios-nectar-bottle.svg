@@ -1,1 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 625"><image href="helios-nectar-concept.jpg" width="500" height="625" preserveAspectRatio="xMidYMid meet"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+<defs>
+  <linearGradient id="glass" x1="0" x2="1"><stop stop-color="#9e4313"/><stop offset=".12" stop-color="#ee8b21"/><stop offset=".28" stop-color="#ffc55d"/><stop offset=".48" stop-color="#ffdf89"/><stop offset=".65" stop-color="#f5a02e"/><stop offset=".84" stop-color="#c45d18"/><stop offset="1" stop-color="#7e2f0d"/></linearGradient>
+  <linearGradient id="liq" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffd269" stop-opacity=".9"/><stop offset=".48" stop-color="#f49a27" stop-opacity=".92"/><stop offset="1" stop-color="#bd4d12"/></linearGradient>
+  <linearGradient id="gold" x1="0" x2="1"><stop stop-color="#755019"/><stop offset=".15" stop-color="#f3d889"/><stop offset=".39" stop-color="#a87822"/><stop offset=".65" stop-color="#f8e6ae"/><stop offset=".84" stop-color="#b17b28"/><stop offset="1" stop-color="#6b4614"/></linearGradient>
+  <radialGradient id="shine"><stop stop-color="#fff9da" stop-opacity=".92"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+  <filter id="shadow" x="-40%" y="-40%" width="180%" height="200%"><feGaussianBlur in="SourceAlpha" stdDeviation="18"/><feOffset dy="22"/><feColorMatrix values="0 0 0 0 .35 0 0 0 0 .12 0 0 0 0 .02 0 0 0 .36 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="blur"><feGaussianBlur stdDeviation="10"/></filter>
+</defs>
+<ellipse cx="300" cy="715" rx="168" ry="28" fill="#a14f16" opacity=".24" filter="url(#blur)"/>
+<g filter="url(#shadow)">
+  <rect x="225" y="74" width="150" height="158" rx="17" fill="url(#gold)" stroke="#e5c46f" stroke-width="2"/>
+  <path d="M246 91h16v126h-16z" fill="#fff" opacity=".28"/>
+  <rect x="264" y="218" width="72" height="55" rx="9" fill="url(#gold)"/>
+  <path d="M155 296q0-35 39-47h212q39 12 39 47v323q0 48-44 67-101 31-202 0-44-19-44-67z" fill="url(#glass)" stroke="#e0a043" stroke-width="3"/>
+  <path d="M171 332q5-47 42-58h174q37 11 42 58v280q-2 42-36 55-93 27-186 0-34-13-36-55z" fill="url(#liq)" opacity=".82"/>
+  <path d="M185 311q4-33 35-41h20l-20 391q-28-12-33-46z" fill="#fff" opacity=".28"/>
+  <ellipse cx="243" cy="360" rx="61" ry="155" fill="url(#shine)" opacity=".36" transform="rotate(8 243 360)"/>
+  <path d="M420 318v294q-1 28-22 42" fill="none" stroke="#fff9cf" stroke-width="9" opacity=".22"/>
+  <rect x="201" y="403" width="198" height="176" rx="7" fill="#fff5dc" stroke="#d69d3b" stroke-width="2"/>
+  <circle cx="300" cy="450" r="31" fill="none" stroke="#a76f1c" stroke-width="2"/>
+  <text x="300" y="465" text-anchor="middle" font-family="Georgia,serif" font-size="46" fill="#a76f1c">H</text>
+  <text x="300" y="507" text-anchor="middle" font-family="Georgia,serif" font-size="23" letter-spacing="5" fill="#6a4019">HILLERYS</text>
+  <line x1="248" y1="522" x2="352" y2="522" stroke="#bb7f29"/>
+  <text x="300" y="548" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" letter-spacing="2.7" fill="#7c4b1c">HELIOS NECTAR</text>
+  <text x="300" y="567" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" letter-spacing="2" fill="#a77942">EAU DE PARFUM</text>
+</g></svg>
