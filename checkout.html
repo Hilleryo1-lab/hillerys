@@ -24,10 +24,10 @@
 </main>
 <script>
 const CART_KEY='hillerysCart';
-let cart=[];try{cart=JSON.parse(localStorage.getItem(CART_KEY)||'[]')}catch(e){cart=[]}
+let cart=[];try{cart=JSON.parse(sessionStorage.getItem(CART_KEY)||'[]')}catch(e){cart=[]}
 let discountRate=0;
 const money=n=>'£'+Number(n).toFixed(2);
-function save(){localStorage.setItem(CART_KEY,JSON.stringify(cart))}
+function save(){sessionStorage.setItem(CART_KEY,JSON.stringify(cart))}
 function render(){const box=document.getElementById('items');const btn=document.getElementById('placeOrder');if(!cart.length){box.innerHTML='<div class="empty">Your cart is empty. <a href="index.html#shop"><u>Return to the shop</u></a> to add something.</div>';btn.disabled=true}else{btn.disabled=false;box.innerHTML=cart.map((i,idx)=>`<div class="item"><div><b>${i.name}</b><br><small>${i.variant||''}</small><div class="qty"><button type="button" data-minus="${idx}">−</button><span>${i.qty}</span><button type="button" data-plus="${idx}">+</button></div></div><strong>${money(i.price*i.qty)}</strong></div>`).join('')}
 const subtotal=cart.reduce((s,i)=>s+i.price*i.qty,0);const discount=subtotal*discountRate;const eligibleAmount=Math.max(0,subtotal-discount);const shipping=eligibleAmount===0?0:(eligibleAmount>100?0:4.95);const total=Math.max(0,eligibleAmount+shipping);document.getElementById('subtotal').textContent=money(subtotal);document.getElementById('discount').textContent='−'+money(discount);document.getElementById('shipping').textContent=shipping?money(shipping):'Free';document.getElementById('total').textContent=money(total);document.querySelectorAll('[data-minus]').forEach(b=>b.onclick=()=>{const i=cart[Number(b.dataset.minus)];i.qty--;if(i.qty<=0)cart.splice(Number(b.dataset.minus),1);save();render()});document.querySelectorAll('[data-plus]').forEach(b=>b.onclick=()=>{cart[Number(b.dataset.plus)].qty++;save();render()})}
 document.getElementById('applyPromo').onclick=()=>{const code=document.getElementById('promoCode').value.trim().toUpperCase();discountRate=code==='WELCOME10'?.10:0;render();const n=document.getElementById('notice');n.style.display='block';n.textContent=discountRate?'WELCOME10 applied — 10% off your order.':'That discount code is not valid.'};
